@@ -1,0 +1,80 @@
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      padding: 20px;
+    }
+    .faq-section {
+      margin-bottom: 30px;
+    }
+    .faq-section h2 {
+      color: #333;
+    }
+    .faq-item {
+      background-color: #fff;
+      border-radius: 5px;
+      margin: 10px 0;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .faq-item h3 {
+      margin: 0;
+      font-size: 1.2em;
+    }
+    .faq-item p {
+      margin-top: 5px;
+      color: #555;
+    }
+    .live-chat {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 1.5em;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .live-chat:hover {
+      background-color: #0056b3;
+    }
+    .contact-section {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+    }
+    .contact-section h3 {
+      color: #333;
+    }
+    .contact-section form input,
+    .contact-section form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+    .contact-section form button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .contact-section form button:hover {
+      background-color: #0056b3;
+    }

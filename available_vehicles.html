@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Vehicles</title>
+    <link rel="stylesheet" href="style/available_vehicles.css">
+</head>
+<body>
+    <header>
+        <h1>Available Vehicles</h1>
+    </header>
+
+    <div class="container">
+        <h2>Pickup Location: <span id="pickup-location">123 Main St, New York</span></h2>
+        <h3>Journey Period: <span id="journey-period">Jan 10, 2025 - Jan 15, 2025</span></h3>
+
+        <div class="vehicle">
+            <img src="vehicle1-placeholder.jpg" alt="Car Image">
+            <div class="vehicle-details">
+                <h2>Toyota Corolla 2022</h2>
+                <p><strong>Price per day:</strong> $45</p>
+                <p><strong>Transmission:</strong> Automatic</p>
+                <p><strong>Seats:</strong> 5</p>
+                <p><strong>Description:</strong> A comfortable and efficient car perfect for city and long-distance travel.</p>
+            </div>
+            <div class="vehicle-actions">
+                <button>Book Now</button>
+            </div>
+        </div>
+
+        <div class="vehicle">
+            <img src="vehicle2-placeholder.jpg" alt="Car Image">
+            <div class="vehicle-details">
+                <h2>Ford Explorer 2023</h2>
+                <p><strong>Price per day:</strong> $60</p>
+                <p><strong>Transmission:</strong> Automatic</p>
+                <p><strong>Seats:</strong> 7</p>
+                <p><strong>Description:</strong> A spacious SUV ideal for families and group travel.</p>
+            </div>
+            <div class="vehicle-actions">
+                <a href="mileage.html" class="btn btn:primary">Book Now</a>
+            </div>
+        </div>
+
+        <div class="vehicle">
+            <img src="vehicle3-placeholder.jpg" alt="Car Image">
+            <div class="vehicle-details">
+                <h2>Honda Civic 2022</h2>
+                <p><strong>Price per day:</strong> $40</p>
+                <p><strong>Transmission:</strong> Manual</p>
+                <p><strong>Seats:</strong> 5</p>
+                <p><strong>Description:</strong> A reliable compact car with excellent fuel efficiency.</p>
+            </div>
+            <div class="vehicle-actions">
+                <button>Book Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Replace the placeholder values dynamically if needed
+        const pickupLocation = "123 Main St, New York"; // Example value
+        const journeyPeriod = "Jan 10, 2025 - Jan 15, 2025"; // Example value
+
+        document.getElementById('pickup-location').textContent = pickupLocation;
+        document.getElementById('journey-period').textContent = journeyPeriod;
+    </script>
+</body>
+</html>

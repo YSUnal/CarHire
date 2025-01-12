@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Cars</title>
+    <link rel="stylesheet" href="style/filters.css">
+
+</head>
+<body>
+    <header>
+        <h1>Search for Cars</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="filter-container">
+            <h2>Filters</h2>
+            <form action="/search-results" method="GET">
+                <label for="transmission">Transmission</label>
+                <select id="transmission" name="transmission">
+                    <option value="">Any</option>
+                    <option value="automatic">Automatic</option>
+                    <option value="manual">Manual</option>
+                </select>
+
+                <label for="price">Price Range (per day)</label>
+                <select id="price" name="price">
+                    <option value="">Any</option>
+                    <option value="0-30">$0 - $30</option>
+                    <option value="30-60">$30 - $60</option>
+                    <option value="60-100">$60 - $100</option>
+                    <option value="100+">$100+</option>
+                </select>
+
+                <label for="brand">Brand</label>
+                <input type="text" id="brand" name="brand" placeholder="Enter brand">
+
+                <label for="country">Country</label>
+                <input type="text" id="country" name="country" placeholder="Enter country">
+
+                <label for="ratings">Ratings</label>
+                <select id="ratings" name="ratings">
+                    <option value="">Any</option>
+                    <option value="1">1 Star & Up</option>
+                    <option value="2">2 Stars & Up</option>
+                    <option value="3">3 Stars & Up</option>
+                    <option value="4">4 Stars & Up</option>
+                    <option value="5">5 Stars</option>
+                </select>
+
+                <button type="submit">Apply Filters</button>
+            </form>
+        </div>
+
+        <div class="car-list">
+            <h2>Available Cars</h2>
+
+            <div class="car-card">
+                <img src="https://via.placeholder.com/150" alt="Car Image">
+                <div>
+                    <h2>Toyota Corolla</h2>
+                    <p>Compact and reliable, perfect for city driving. Starting at $30/day.</p>
+                    <a href="more_details.html" type="submit" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+
+            <div class="car-card">
+                <img src="https://via.placeholder.com/150" alt="Car Image">
+                <div>
+                    <h2>Ford Mustang</h2>
+                    <p>Experience power and style. Starting at $80/day.</p>
+                    <a href="more_details.html" type="submit" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+
+            <div class="car-card">
+                <img src="https://via.placeholder.com/150" alt="Car Image">
+                <div>
+                    <h2>Honda CR-V</h2>
+                    <p>Spacious and comfortable, ideal for road trips. Starting at $50/day.</p>
+                    <a href="more_details.html" type="submit" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

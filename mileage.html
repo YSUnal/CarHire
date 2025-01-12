@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Mileage</title>
+    <link rel="stylesheet" href="style/mileage.css">
+
+</head>
+<body>
+    <header>
+        <h1>Select Mileage</h1>
+    </header>
+
+    <div class="container">
+        <h2>Vehicle Selected: <span id="vehicle-name">Toyota Corolla 2022</span></h2>
+        <h3>Pickup Location: <span id="pickup-location">123 Main St, New York</span></h3>
+        <h4>Journey Period: <span id="journey-period">Jan 10, 2025 - Jan 15, 2025</span></h4>
+
+        <div class="form-group">
+            <label for="mileage">Enter Estimated Mileage (in miles)</label>
+            <input type="number" id="mileage" placeholder="e.g., 300" min="0">
+        </div>
+
+        <button onclick="confirmMileage()">Confirm Mileage</button>
+        <button class="mileage-calculator" onclick="goToMileageCalculator()">Mileage Calculator</button>
+        <button class="checkout" onclick="goToCheckout()">Checkout</button>
+    </div>
+
+    <script>
+        function confirmMileage() {
+            const mileage = document.getElementById('mileage').value;
+            if (mileage === "" || mileage <= 0) {
+                alert("Please enter a valid mileage.");
+            } else {
+                alert(`Mileage of ${mileage} miles confirmed for the chosen vehicle.`);
+            }
+        }
+
+        function goToMileageCalculator() {
+            window.location.href = "mileage_calc.html";
+        }
+
+        function goToCheckout() {
+            window.location.href = "checkout.html";
+        }
+
+
+        // Example dynamic data replacement
+        const vehicleName = "Toyota Corolla 2022";
+        const pickupLocation = "123 Main St, New York";
+        const journeyPeriod = "Jan 10, 2025 - Jan 15, 2025";
+
+        document.getElementById('vehicle-name').textContent = vehicleName;
+        document.getElementById('pickup-location').textContent = pickupLocation;
+        document.getElementById('journey-period').textContent = journeyPeriod;
+    </script>
+</body>
+</html>

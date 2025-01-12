@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentals</title>
+    <link rel="stylesheet" href="style/rentals.css">
+
+</head>
+<body>
+    <header>
+        <h1>Rentals</h1>
+    </header>
+
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('previous')">Previous Rentals</div>
+            <div class="tab" onclick="showTab('current')">Current Rentals</div>
+            <div class="tab" onclick="showTab('scheduled')">Scheduled Rentals</div>
+            <div class="tab" onclick="showTab('favourites')">Favourites</div>
+        </div>
+
+        <div id="previous" class="content active">
+            <h2>Previous Rentals</h2>
+            <div class="rental-card">
+                <div>
+                    <h3>Toyota Corolla</h3>
+                    <p>Rental Period: Jan 1, 2024 - Jan 7, 2024</p>
+                </div>
+                <p>$210</p>
+            </div>
+
+            <div class="rental-card">
+                <div>
+                    <h3>Ford Mustang</h3>
+                    <p>Rental Period: Dec 15, 2023 - Dec 20, 2023</p>
+                </div>
+                <p>$400</p>
+            </div>
+        </div>
+
+        <div id="current" class="content">
+            <h2>Current Rentals</h2>
+            <div class="rental-card">
+                <div>
+                    <h3>Honda CR-V</h3>
+                    <p>Rental Period: Jan 1, 2025 - Jan 7, 2025</p>
+                </div>
+                <p>$350</p>
+            </div>
+        </div>
+
+        <div id="scheduled" class="content">
+            <h2>Scheduled Rentals</h2>
+            <div class="rental-card">
+                <div>
+                    <h3>Chevrolet Tahoe</h3>
+                    <p>Rental Period: Feb 10, 2025 - Feb 15, 2025</p>
+                </div>
+                <p>$500</p>
+            </div>
+        </div>
+
+        <div id="favourites" class="content">
+            <h2>Favourites</h2>
+            <div class="rental-card">
+                <div>
+                    <h3>BMW X5</h3>
+                    <p>Luxury and performance SUV</p>
+                </div>
+                <p>Starting at $120/day</p>
+            </div>
+
+            <div class="rental-card">
+                <div>
+                    <h3>Tesla Model 3</h3>
+                    <p>Electric and eco-friendly sedan</p>
+                </div>
+                <p>Starting at $100/day</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.content');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            document.querySelector(`#${tabId}`).classList.add('active');
+            document.querySelector(`.tab[onclick="showTab('${tabId}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>

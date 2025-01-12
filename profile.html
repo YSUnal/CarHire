@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style/profile.css">
+
+</head>
+<body>
+    <header>
+        <h1>Profile</h1>
+    </header>
+
+    <div class="container">
+        <div class="profile-section">
+            <label for="name">Name</label>
+            <p id="name">John Doe</p>
+        </div>
+
+        <div class="profile-section">
+            <label for="dob">Date of Birth</label>
+            <p id="dob">January 1, 1990</p>
+        </div>
+
+        <div class="profile-section">
+            <label for="country">Country</label>
+            <p id="country">United States</p>
+        </div>
+
+        <div class="profile-section">
+            <label for="address">Address</label>
+            <p id="address">123 Main Street, Springfield, USA</p>
+        </div>
+
+        <div class="profile-section">
+            <label for="email">Email</label>
+            <p id="email">john.doe@example.com</p>
+        </div>
+
+        <div class="profile-section">
+            <label for="mobile">Mobile Number</label>
+            <p id="mobile">+1 234 567 890</p>
+        </div>
+
+        <div class="currency-section">
+            <label for="currency">Select Currency</label>
+            <select id="currency">
+                <option value="usd">USD - US Dollar</option>
+                <option value="eur">EUR - Euro</option>
+                <option value="gbp">GBP - British Pound</option>
+            </select>
+            <button onclick="selectCurrency()">Save Currency</button>
+        </div>
+    </div>
+
+    <script>
+        function selectCurrency() {
+            const currency = document.getElementById('currency').value;
+            alert(`Currency set to: ${currency.toUpperCase()}`);
+        }
+    </script>
+</body>
+</html>

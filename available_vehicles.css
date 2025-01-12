@@ -1,0 +1,64 @@
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .vehicle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        .vehicle img {
+            max-width: 150px;
+            border-radius: 8px;
+        }
+        .vehicle-details {
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+        .vehicle-details h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+        .vehicle-details p {
+            margin: 5px 0;
+        }
+        .vehicle-actions {
+            text-align: center;
+        }
+        .vehicle-actions button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .vehicle-actions button:hover {
+            background-color: #218838;
+        }

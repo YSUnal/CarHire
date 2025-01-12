@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Mileage Calculator</title>
+    <link rel="stylesheet" href="style/mileage_calc.css">
+
+</head>
+<body>
+    <header>
+        <h1>Route Mileage Calculator</h1>
+    </header>
+
+    <div class="container">
+        <div class="form-group">
+            <label for="pickup-location">Pickup Location</label>
+            <input type="text" id="pickup-location" placeholder="Enter pickup location">
+        </div>
+
+        <div id="stops-container">
+            <div class="form-group">
+                <label for="stop-1">Stop 1</label>
+                <input type="text" id="stop-1" placeholder="Enter first stop">
+            </div>
+        </div>
+
+        <button onclick="addStop()">Add Stop</button>
+
+        <div class="form-group" style="margin-top: 20px;">
+            <label for="dropoff-location">Drop-off Location</label>
+            <input type="text" id="dropoff-location" placeholder="Enter drop-off location">
+        </div>
+
+        <button onclick="calculateRouteMileage()">Calculate Total Mileage</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        let stopCount = 1;
+
+        function addStop() {
+            stopCount++;
+            const stopsContainer = document.getElementById('stops-container');
+            const newStop = document.createElement('div');
+            newStop.className = 'form-group';
+            newStop.innerHTML = `
+                <label for="stop-${stopCount}">Stop ${stopCount}</label>
+                <input type="text" id="stop-${stopCount}" placeholder="Enter stop ${stopCount}">
+            `;
+            stopsContainer.appendChild(newStop);
+        }
+
+        function calculateRouteMileage() {
+            const pickupLocation = document.getElementById('pickup-location').value;
+            const dropoffLocation = document.getElementById('dropoff-location').value;
+
+            if (!pickupLocation || !dropoffLocation) {
+                alert('Please enter both pickup and drop-off locations.');
+                return;
+            }
+
+            const stops = [];
+            for (let i = 1; i <= stopCount; i++) {
+                const stop = document.getElementById(`stop-${i}`).value;
+                if (stop) stops.push(stop);
+            }
+
+            const route = [pickupLocation, ...stops, dropoffLocation];
+            const simulatedMiles = Math.floor(Math.random() * 100) + route.length * 10; // Simulated mileage
+
+            document.getElementById('result').textContent = `The estimated route mileage is approximately ${simulatedMiles} miles.`;
+        }
+    </script>
+</body>
+</html>

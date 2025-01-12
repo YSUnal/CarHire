@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Date and Time</title>
+    <link rel="stylesheet" href="style/select_date.css">
+
+</head>
+<body>
+    <header>
+        <h1>Select Date and Time</h1>
+    </header>
+
+    <div class="container">
+        <form id="date-time-form">
+            <div class="form-group">
+                <label for="location">Location</label>
+                <select id="location" name="location" required>
+                    <option value="">Select Location</option>
+                    <option value="newyork">New York</option>
+                    <option value="losangeles">Los Angeles</option>
+                    <option value="chicago">Chicago</option>
+                    <option value="houston">Houston</option>
+                    <option value="miami">Miami</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Select Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="start-time">Start Time</label>
+                <input type="time" id="start-time" name="start-time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="end-time">End Time</label>
+                <input type="time" id="end-time" name="end-time" required>
+            </div>
+
+            <div class="button-section">
+                <a href="pickup_location.html" type="submit">Continue</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('date-time-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const location = document.getElementById('location').value;
+            const date = document.getElementById('date').value;
+            const startTime = document.getElementById('start-time').value;
+            const endTime = document.getElementById('end-time').value;
+
+            if (location && date && startTime && endTime) {
+                alert(`Location: ${location}\nDate: ${date}\nStart Time: ${startTime}\nEnd Time: ${endTime}`);
+            } else {
+                alert('Please fill out all fields.');
+            }
+        });
+    </script>
+</body>
+</html>

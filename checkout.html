@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style/checkout.css">
+</head>
+<body>
+    <header>
+        <h1>Checkout</h1>
+    </header>
+
+    <div class="container">
+        <div class="summary">
+            <h2>Order Summary</h2>
+            <p><strong>Rental Price:</strong> $300</p>
+            <p><strong>Deposit:</strong> $500 <span class="important">(Refundable)</span></p>
+            <p><strong>Total Due:</strong> $800</p>
+            <p class="important">Note: Any damages to the vehicle will be deducted from the deposit amount.</p>
+        </div>
+
+        <button onclick="goToPayment()">Proceed to Payment</button>
+    </div>
+
+    <script>
+        function goToPayment() {
+            window.location.href = "payment.html";
+        }
+    </script>
+</body>
+</html>

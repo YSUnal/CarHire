@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.car-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.car-image img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+.car-details {
+    margin-bottom: 20px;
+}
+.car-details h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+.car-details p {
+    margin: 5px 0;
+}
+.car-details p span {
+    font-weight: bold;
+}
+.button-section {
+    text-align: center;
+    margin-top: 20px;
+}
+.button-section button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.button-section .rent-button {
+    background-color: #28a745;
+    color: white;
+}
+.button-section .rent-button:hover {
+    background-color: #218838;
+}
+.button-section .back-button {
+    background-color: #dc3545;
+    color: white;
+}
+.button-section .back-button:hover {
+    background-color: #c82333;
+}

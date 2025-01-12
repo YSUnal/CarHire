@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Location Search</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      padding: 20px;
+    }
+    .search-section {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .search-section input[type="text"] {
+      padding: 10px;
+      font-size: 1em;
+      width: 50%;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+    .search-section button {
+      padding: 10px 20px;
+      margin-left: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .search-section button:hover {
+      background-color: #0056b3;
+    }
+    .location-list {
+      margin-top: 20px;
+    }
+    .location-item {
+      background-color: #fff;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .location-item h3 {
+      margin: 0;
+    }
+    .location-item p {
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Car Location Search</h1>
+</header>
+
+<div class="container">
+  <section class="search-section">
+    <h2>Find Cars by Location</h2>
+    <input type="text" id="locationSearch" placeholder="Enter a location (e.g., New York)">
+    <button onclick="searchLocation()">Search</button>
+  </section>
+
+  <div class="location-list" id="locationList">
+    <!-- Example Locations of Cars -->
+    <div class="location-item">
+      <h3>New York</h3>
+      <p>BMW 3 Series - Available at 5th Ave, New York, NY</p>
+      <a href="select_date.html" type="submit" class="btn btn-primary">Choose</a>
+    </div>
+    <div class="location-item">
+      <h3>Los Angeles</h3>
+      <p>Audi A4 - Available at Santa Monica Blvd, Los Angeles, CA</p>
+    </div>
+    <div class="location-item">
+      <h3>Chicago</h3>
+      <p>Toyota Camry - Available at Michigan Ave, Chicago, IL</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Array of sample car locations
+  const carLocations = [
+    { location: 'New York', car: 'BMW 3 Series - 5th Ave, New York, NY' },
+    { location: 'Los Angeles', car: 'Audi A4 - Santa Monica Blvd, Los Angeles, CA' },
+    { location: 'Chicago', car: 'Toyota Camry - Michigan Ave, Chicago, IL' },
+    { location: 'Miami', car: 'Ford Mustang - Ocean Drive, Miami, FL' },
+    { location: 'San Francisco', car: 'Tesla Model 3 - Market St, San Francisco, CA' }
+  ];
+
+  // Function to search for a location
+  function searchLocation() {
+    const searchQuery = document.getElementById('locationSearch').value.toLowerCase();
+    const filteredLocations = carLocations.filter(location => location.location.toLowerCase().includes(searchQuery));
+
+    const locationList = document.getElementById('locationList');
+    locationList.innerHTML = ''; // Clear previous results
+
+    if (filteredLocations.length > 0) {
+      filteredLocations.forEach(location => {
+        const locationItem = document.createElement('div');
+        locationItem.classList.add('location-item');
+        locationItem.innerHTML = `
+          <h3>${location.location}</h3>
+          <p>${location.car}</p>
+        `;
+        locationList.appendChild(locationItem);
+      });
+    } else {
+      locationList.innerHTML = '<p>No cars found for this location.</p>';
+    }
+  }
+</script>
+
+</body>
+</html>
+
+

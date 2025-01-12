@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pickup Location</title>
+    <link rel="stylesheet" href="style/pickup_location.css">
+
+</head>
+<body>
+    <header>
+        <h1>Pickup Location</h1>
+    </header>
+
+    <div class="container">
+        <div class="form-group">
+            <label for="city-filter">Filter by City</label>
+            <input type="text" id="city-filter" placeholder="Enter city name...">
+        </div>
+
+        <div class="form-group">
+            <label for="pickup-location">Select Pickup Location</label>
+            <ul id="locations-list" class="locations-list">
+                <li data-city="New York">123 Main St, New York</li>
+                <li data-city="New York">456 Broadway, New York</li>
+                <li data-city="Los Angeles">789 Hollywood Blvd, Los Angeles</li>
+                <li data-city="Los Angeles">101 Sunset Blvd, Los Angeles</li>
+                <li data-city="Chicago">202 Michigan Ave, Chicago</li>
+                <li data-city="Chicago">303 Lake Shore Dr, Chicago</li>
+            </ul>
+            <a href="available_vehicles.html" type="submit">Continue</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('city-filter').addEventListener('input', function(event) {
+            const filterValue = event.target.value.toLowerCase();
+            const locations = document.querySelectorAll('#locations-list li');
+
+            locations.forEach(location => {
+                const city = location.getAttribute('data-city').toLowerCase();
+                if (city.includes(filterValue)) {
+                    location.style.display = '';
+                } else {
+                    location.style.display = 'none';
+                }
+            });
+        });
+
+        document.getElementById('locations-list').addEventListener('click', function(event) {
+            if (event.target.tagName === 'LI') {
+                alert(`You selected: ${event.target.textContent}`);
+            }
+        });
+    </script>
+</body>
+</html>
